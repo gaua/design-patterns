@@ -4,12 +4,12 @@ namespace Impl\Singleton;
 
 /**
  * Class Config
- * @package impl\singleton
+ * @package Impl\Singleton
  */
 class Config
 {
     /**
-     * @var self
+     * @var Config
      */
     private static $instance = null;
 
@@ -53,16 +53,11 @@ class Config
     }
 
     /**
-     * @param string $key
-     * @param mixed $value
-     * @throws \Exception
+     * @param $key
+     * @param $value
      */
     public function set($key, $value)
     {
-        if (!array_key_exists($key, $this->options)) {
-            throw new \Exception('Option does not exist');
-        }
-
         $this->options[$key] = $value;
     }
 }

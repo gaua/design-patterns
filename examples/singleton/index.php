@@ -1,6 +1,6 @@
 <?php
 
-require '../../autoload.php';
+require_once '../../autoload.php';
 
 use Impl\Singleton\Config;
 
