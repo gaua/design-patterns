@@ -4,17 +4,18 @@ require_once '../../autoload.php';
 
 use Impl\Singleton\Config;
 
+
 $config = Config::getInstance();
 
-println('First:');
-println($config->get('foo'));
-println($config->get('bar'));
+printnl('First:');
+printnl($config->get('foo'));
+printnl($config->get('bar'));
 
 $config->set('foo', 'bbb');
 $config->set('bar', 'bbb');
 
 $anotherConfig = Config::getInstance();
 
-println('Second:');
-println($anotherConfig->get('foo'));
-println($anotherConfig->get('bar'));
+printnl('Second:');
+printnl($anotherConfig->get('foo'));
+printnl($anotherConfig->get('bar'));
