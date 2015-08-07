@@ -2,19 +2,20 @@
 
 include_once '../../autoload.php';
 
-use Impl\FactoryMethod\BooksManager;
+use Impl\FactoryMethod\ArrayConverter;
 
 
-$booksManager = new BooksManager();
+$source = [
+    [
+        'id' => 1,
+        'name' => 'John Snow'
+    ],
+    [
+        'id' => 2,
+        'name' => 'Ned Stark'
+    ]
+];
 
-$book = $booksManager->createProduct();
-$book->setIsbn('1234-AS-4321');
+$arrayConverter = new ArrayConverter($source);
 
-printnl($booksManager->describeProduct());
-
-$cdsManager = new \Impl\FactoryMethod\CDsManager();
-
-$cd = $cdsManager->createProduct();
-$cd->setTitle('Symbolic');
-
-printnl($cdsManager->describeProduct());
+printnl($arrayConverter->convert());
