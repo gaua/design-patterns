@@ -8,5 +8,21 @@ namespace Impl\AbstractFactory;
  */
 abstract class FormatWriter
 {
-    abstract public function write();
+    /**
+     * @var mixed
+     */
+    protected $results;
+
+    /**
+     * @param string $data
+     */
+    abstract public function write($data);
+
+    /**
+     * @return mixed
+     */
+    public function getResults()
+    {
+        return $this->results;
+    }
 }

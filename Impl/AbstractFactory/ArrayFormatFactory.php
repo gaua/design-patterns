@@ -23,10 +23,10 @@ class ArrayFormatFactory extends FormatFactory
     }
 
     /**
-     * @return FormatWriter
+     * @return JSONFormatWriter
      */
     public function createFormatWriter()
     {
-        // TODO: Implement createFormatWriter() method.
+        return new ArrayFormatWriter();
     }
 }

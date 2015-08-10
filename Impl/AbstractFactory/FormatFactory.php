@@ -6,7 +6,7 @@ abstract class FormatFactory
 {
     /**
      * @param $source
-     * @return mixed
+     * @return FormatReader
      */
     abstract public function createFormatReader($source);
 
