@@ -6,11 +6,11 @@ namespace Impl\FactoryMethod;
  * Class ConverterFactory
  * @package Impl\FactoryMethod
  */
-abstract class ConverterFactory
+interface ConverterFactory
 {
     /**
      * @param $source
      * @return mixed
      */
-    abstract public function createConverter($source);
+    public function createConverter($source);
 }

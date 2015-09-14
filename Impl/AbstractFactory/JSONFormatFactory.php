@@ -6,7 +6,7 @@ namespace Impl\AbstractFactory;
  * Class JSONFormatFactory
  * @package Impl\AbstractFactory
  */
-class JSONFormatFactory extends FormatFactory
+class JSONFormatFactory implements FormatFactory
 {
     /**
      * @param $source

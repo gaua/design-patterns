@@ -2,7 +2,11 @@
 
 namespace Impl\FactoryMethod;
 
-class ArrayConverterFactory extends ConverterFactory
+/**
+ * Class ArrayConverterFactory
+ * @package Impl\FactoryMethod
+ */
+class ArrayConverterFactory implements  ConverterFactory
 {
     /**
      * @param $source

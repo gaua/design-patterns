@@ -6,7 +6,7 @@ namespace Impl\AbstractFactory;
  * Class ArrayFormatFactory
  * @package Impl\AbstractFactory
  */
-class ArrayFormatFactory extends FormatFactory
+class ArrayFormatFactory implements FormatFactory
 {
     /**
      * @param $source
