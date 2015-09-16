@@ -18,4 +18,4 @@ $source = [
 
 $arrayConverter = new ArrayConverter($source);
 
-printnl($arrayConverter->convert());
+printbr($arrayConverter->convert());

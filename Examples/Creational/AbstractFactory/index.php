@@ -18,8 +18,8 @@ $jsonFormatReader = $jsonFormatFactory->createFormatReader($jsonSource);
 $arrayFormatReader->read();
 $jsonFormatReader->read();
 
-printnl($arrayFormatReader->getResults());
-printnl($jsonFormatReader->getResults());
+printbr($arrayFormatReader->getResults());
+printbr($jsonFormatReader->getResults());
 
 
 $arrayFormatWriter = $arrayFormatFactory->createFormatWriter();
@@ -29,5 +29,5 @@ $arrayFormatWriter->write('red green blue');
 $jsonFormatWriter->write('red green blue');
 
 print_r($arrayFormatWriter->getResults());
-printnl('');
+printbr('');
 print_r($jsonFormatWriter->getResults());

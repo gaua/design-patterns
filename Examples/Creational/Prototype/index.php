@@ -19,7 +19,7 @@ $arrayFormatReader = $formatFactory->getFormatReader();
 
 $arrayFormatReader->read();
 
-printnl($arrayFormatReader->getResults());
+printbr($arrayFormatReader->getResults());
 
 $arrayFormatWriter = $formatFactory->getFormatWriter();
 

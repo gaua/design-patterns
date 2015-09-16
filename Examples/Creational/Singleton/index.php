@@ -7,15 +7,15 @@ use Impl\Creational\Singleton\Config;
 
 $config = Config::getInstance();
 
-printnl('First:');
-printnl($config->get('foo'));
-printnl($config->get('bar'));
+printbr('First:');
+printbr($config->get('foo'));
+printbr($config->get('bar'));
 
 $config->set('foo', 'bbb');
 $config->set('bar', 'bbb');
 
 $anotherConfig = Config::getInstance();
 
-printnl('Second:');
-printnl($anotherConfig->get('foo'));
-printnl($anotherConfig->get('bar'));
+printbr('Second:');
+printbr($anotherConfig->get('foo'));
+printbr($anotherConfig->get('bar'));

@@ -14,7 +14,12 @@ spl_autoload_register(function ($className) {
 /**
  * @param string $string
  */
-function printnl($string)
+function printbr($string)
 {
     echo nl2br($string . PHP_EOL);
+}
+
+function addnl($string)
+{
+    return $string . PHP_EOL;
 }
