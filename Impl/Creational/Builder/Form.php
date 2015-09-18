@@ -15,12 +15,22 @@ class Form implements Renderable
     /**
      * @var string
      */
-    protected $method = self::ACTION_POST;
+    protected $method;
 
     /**
      * @var string
      */
     protected $action;
+
+    /**
+     * @param string $method
+     * @param string $action
+     */
+    public function __construct($action, $method = self::ACTION_POST)
+    {
+        $this->method = $method;
+        $this->action = $action;
+    }
 
     /**
      * @return string
