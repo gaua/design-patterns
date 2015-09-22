@@ -7,12 +7,12 @@ class UsersIpSecurity
     /**
      * @var array
      */
-    protected $bannedUsers;
+    protected $bannedUsers = [];
 
     /**
      * @var array
      */
-    protected $bannedIPs;
+    protected $bannedIPs = [];
 
     /**
      * @param $username

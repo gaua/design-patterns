@@ -7,12 +7,12 @@ class ServiceProvider
     /**
      * @var array
      */
-    protected $classMap;
+    protected $classMap = [];
 
     /**
      * @var Service[]
      */
-    protected $services;
+    protected $services = [];
 
     /**
      * sets up class map

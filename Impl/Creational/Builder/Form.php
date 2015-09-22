@@ -10,7 +10,7 @@ class Form implements Renderable
     /**
      * @var FormItem[]
      */
-    protected $items;
+    protected $items = [];
 
     /**
      * @var string

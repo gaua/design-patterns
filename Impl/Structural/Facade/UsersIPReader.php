@@ -12,13 +12,4 @@ class UsersIPReader
     {
         return array_get('users', $usersIP);
     }
-
-    /**
-     * @param array $usersIP
-     * @return array
-     */
-    public function fetchIPs(array $usersIP)
-    {
-        return array_get('ips', $usersIP);
-    }
 }

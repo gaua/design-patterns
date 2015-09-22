@@ -42,8 +42,8 @@ class BanFacade
 
         $this->security->banUser($username);
 
-        if ($ip) {
-            $ips = $this->provider->getUsersIp();
+        if ($ip !== null && filter_var($ip, FILTER_VALIDATE_IP)) {
+            $ips = $this->security->getBannedIPs();
 
             if (!in_array($ip, $ips)) {
                 $this->security->banIP($ip);

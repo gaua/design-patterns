@@ -9,13 +9,6 @@ class UsersIPProvider
      */
     public function getUsersIp()
     {
-        return [
-            'users' => ['A', 'B', 'C'],
-            'ips' => [
-                '11.11.11.11',
-                '11.11.11.22',
-                '11.11.11.33'
-            ]
-        ];
+        return ['users' => ['A', 'B', 'C']];
     }
 }
