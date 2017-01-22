@@ -1,26 +1,15 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\AbstractFactory;
 
-/**
- * Class JSONFormatFactory
- * @package Impl\AbstractFactory
- */
 class JSONFormatFactory implements FormatFactory
 {
-    /**
-     * @param $source
-     * @return JSONFormatReader
-     */
-    public function createFormatReader($source)
+    public function createFormatReader($source) : FormatReader
     {
         return new JSONFormatReader($source);
     }
 
-    /**
-     * @return JSONFormatWriter
-     */
-    public function createFormatWriter()
+    public function createFormatWriter() : FormatWriter
     {
         return new JSONFormatWriter();
     }

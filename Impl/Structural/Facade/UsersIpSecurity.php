@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Structural\Facade;
 
@@ -14,34 +14,22 @@ class UsersIpSecurity
      */
     protected $bannedIPs = [];
 
-    /**
-     * @param $username
-     */
-    public function banUser($username)
+    public function banUser(string $username) : void
     {
         $this->bannedUsers[] = $username;
     }
 
-    /**
-     * @param $ip
-     */
-    public function banIP($ip)
+    public function banIP(string $ip) : void
     {
         $this->bannedIPs[] = $ip;
     }
 
-    /**
-     * @return array
-     */
-    public function getBannedUsers()
+    public function getBannedUsers() : array
     {
         return $this->bannedUsers;
     }
 
-    /**
-     * @return array
-     */
-    public function getBannedIPs()
+    public function getBannedIPs() : array
     {
         return $this->bannedIPs;
     }

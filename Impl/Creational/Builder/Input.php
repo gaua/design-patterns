@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Builder;
 
@@ -17,35 +17,23 @@ class Input extends FormItem
      */
     protected $type;
 
-    /**
-     * @param string $name
-     * @param string $type
-     */
-    public function __construct($name, $type = self::TYPE_TEXT)
+    public function __construct(string $name, string $type = self::TYPE_TEXT)
     {
         $this->name = $name;
         $this->type = $type;
     }
 
-
-    public function render()
+    public function render() : string
     {
         return "<input name='$this->name' type='$this->type'/>";
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    public function getType() : string
     {
         return $this->type;
     }
 
-    /**
-     * @param $type
-     * @return $this
-     */
-    public function setType($type)
+    public function setType(string $type) : Input
     {
         $this->type = $type;
 

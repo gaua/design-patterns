@@ -1,21 +1,10 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\AbstractFactory;
 
-/**
- * Interface FormatFactory
- * @package Impl\AbstractFactory
- */
 interface FormatFactory
 {
-    /**
-     * @param $source
-     * @return FormatReader
-     */
-    public function createFormatReader($source);
+    public function createFormatReader($source) : FormatReader;
 
-    /**
-     * @return FormatWriter
-     */
-    public function createFormatWriter();
+    public function createFormatWriter() : FormatWriter;
 }

@@ -1,17 +1,10 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\FactoryMethod;
 
-/**
- * Class ArrayConverter
- * @package Impl\FactoryMethod
- */
 class ArrayConverter extends Converter
 {
-    /**
-     * @return string
-     */
-    public function convert()
+    public function convert() : string
     {
         $list = '';
 

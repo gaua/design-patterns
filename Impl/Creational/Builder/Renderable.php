@@ -1,11 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Builder;
 
 interface Renderable
 {
-    /**
-     * @return string
-     */
-    public function render();
+    public function render() : string;
 }

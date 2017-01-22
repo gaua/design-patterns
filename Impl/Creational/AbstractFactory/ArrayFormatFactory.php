@@ -1,19 +1,13 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\AbstractFactory;
 
-/**
- * Class ArrayFormatFactory
- * @package Impl\AbstractFactory
- */
 class ArrayFormatFactory implements FormatFactory
 {
     /**
-     * @param $source
-     * @return ArrayFormatReader
      * @throws \Exception
      */
-    public function createFormatReader($source)
+    public function createFormatReader($source) : FormatReader
     {
         if (!is_array($source)) {
             throw new \Exception('$source must be an array!');
@@ -22,10 +16,7 @@ class ArrayFormatFactory implements FormatFactory
         return new ArrayFormatReader($source);
     }
 
-    /**
-     * @return JSONFormatWriter
-     */
-    public function createFormatWriter()
+    public function createFormatWriter() : FormatWriter
     {
         return new ArrayFormatWriter();
     }

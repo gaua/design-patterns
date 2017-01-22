@@ -1,16 +1,8 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\FactoryMethod;
 
-/**
- * Class ConverterFactory
- * @package Impl\FactoryMethod
- */
 interface ConverterFactory
 {
-    /**
-     * @param $source
-     * @return mixed
-     */
-    public function createConverter($source);
+    public function createConverter(array $source) : ArrayConverter;
 }

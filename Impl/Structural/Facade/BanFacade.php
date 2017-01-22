@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Structural\Facade;
 
@@ -26,12 +26,7 @@ class BanFacade
         $this->security = new UsersIpSecurity();
     }
 
-    /**
-     * @param $username
-     * @param $ip
-     * @throws \Exception
-     */
-    public function ban($username, $ip = null)
+    public function ban(string $username, string $ip = null) : void
     {
         $data = $this->provider->getUsersIp();
         $users = $this->reader->fetchUsers($data);
@@ -51,18 +46,12 @@ class BanFacade
         }
     }
 
-    /**
-     * @return array
-     */
-    public function listBannedUsers()
+    public function listBannedUsers() : array
     {
         return $this->security->getBannedUsers();
     }
 
-    /**
-     * @return array
-     */
-    public function listBannedIPs()
+    public function listBannedIPs() : array
     {
         return $this->security->getBannedIPs();
     }

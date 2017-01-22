@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Builder;
 
@@ -22,20 +22,13 @@ class Form implements Renderable
      */
     protected $action;
 
-    /**
-     * @param string $method
-     * @param string $action
-     */
-    public function __construct($action, $method = self::ACTION_POST)
+    public function __construct(string $action, string $method = self::ACTION_POST)
     {
         $this->method = $method;
         $this->action = $action;
     }
 
-    /**
-     * @return string
-     */
-    public function render()
+    public function render() : string
     {
         $html = addnl("<form action='$this->action' method='$this->method'>");
 
@@ -51,7 +44,7 @@ class Form implements Renderable
     /**
      * @return FormItem[]
      */
-    public function getItems()
+    public function getItems() : array
     {
         return $this->items;
     }
@@ -59,50 +52,34 @@ class Form implements Renderable
     /**
      * @param FormItem[] $items
      */
-    public function setItems($items)
+    public function setItems(array $items)
     {
         $this->items = $items;
     }
 
-    /**
-     * @param FormItem $item
-     * @return $this
-     */
-    public function addItem(FormItem $item)
+    public function addItem(FormItem $item) : Form
     {
         $this->items[] = $item;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getAction()
+    public function getAction() : string
     {
         return $this->action;
     }
 
-    /**
-     * @param string $action
-     */
-    public function setAction($action)
+    public function setAction(string $action) : void
     {
         $this->action = $action;
     }
 
-    /**
-     * @return string
-     */
-    public function getMethod()
+    public function getMethod() : string
     {
         return $this->method;
     }
 
-    /**
-     * @param string $method
-     */
-    public function setMethod($method)
+    public function setMethod(string $method) : void
     {
         $this->method = $method;
     }

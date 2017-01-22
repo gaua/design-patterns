@@ -1,14 +1,10 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Structural\Facade;
 
 class UsersIPReader
 {
-    /**
-     * @param array $usersIP
-     * @return array
-     */
-    public function fetchUsers(array $usersIP)
+    public function fetchUsers(array $usersIP) : array
     {
         return array_get('users', $usersIP);
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Builder;
 
@@ -12,16 +12,12 @@ abstract class FormItem implements Renderable
     /**
      * @return string
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     * @return $this
-     */
-    public function setName($name)
+    public function setName(string $name) : FormItem
     {
         $this->name = $name;
 

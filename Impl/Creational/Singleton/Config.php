@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Singleton;
 
@@ -22,10 +22,7 @@ class Config
      */
     private function __construct() {}
 
-    /**
-     * @return Config
-     */
-    public static function getInstance()
+    public static function getInstance() : Config
     {
         if (is_null(self::$instance)) {
             self::$instance = new self();
@@ -34,12 +31,7 @@ class Config
         return self::$instance;
     }
 
-    /**
-     * @param string $key
-     * @return mixed
-     * @throws \Exception
-     */
-    public function get($key)
+    public function get(string $key)
     {
         if (!array_key_exists($key, $this->options)) {
             throw new \Exception('Option does not exist');
@@ -48,11 +40,7 @@ class Config
         return $this->options[$key];
     }
 
-    /**
-     * @param $key
-     * @param $value
-     */
-    public function set($key, $value)
+    public function set(string $key, $value) : void
     {
         $this->options[$key] = $value;
     }

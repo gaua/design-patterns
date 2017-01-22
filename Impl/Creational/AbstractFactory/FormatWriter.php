@@ -1,26 +1,13 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\AbstractFactory;
 
-/**
- * Class FormatWriter
- * @package Impl\AbstractFactory
- */
 abstract class FormatWriter
 {
-    /**
-     * @var mixed
-     */
     protected $results;
 
-    /**
-     * @param string $data
-     */
-    abstract public function write($data);
+    abstract public function write(string $data) : void;
 
-    /**
-     * @return mixed
-     */
     public function getResults()
     {
         return $this->results;

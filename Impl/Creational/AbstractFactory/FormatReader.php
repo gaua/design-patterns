@@ -1,36 +1,24 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\AbstractFactory;
 
-/**
- * Class FormatReader
- * @package Impl\AbstractFactory
- */
 abstract class FormatReader
 {
-    /**
-     * @var mixed
-     */
     protected $source;
 
     /**
      * @var string
      */
     protected $results;
-    /**
-     * @param mixed $source
-     */
+
     public function __construct($source)
     {
         $this->source = $source;
     }
 
-    abstract public function read();
+    abstract public function read() : void;
 
-    /**
-     * @return string
-     */
-    public function getResults()
+    public function getResults() : string
     {
         return $this->results;
     }

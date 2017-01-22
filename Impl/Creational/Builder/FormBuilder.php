@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Builder;
 
@@ -9,51 +9,33 @@ class FormBuilder
      */
     protected $form;
 
-    /**
-     * @param $action
-     */
-    public function __construct($action)
+    public function __construct(string $action)
     {
         $this->form = new Form($action);
     }
 
-    /**
-     * @param string $method
-     * @return $this
-     */
-    public function method($method)
+    public function method(string $method) : FormBuilder
     {
         $this->form->setMethod($method);
 
         return $this;
     }
 
-    /**
-     * @param string $name
-     * @param string $type
-     * @return $this
-     */
-    public function input($name, $type)
+    public function input(string $name, string $type) : FormBuilder
     {
         $this->form->addItem(new Input($name, $type));
 
         return $this;
     }
 
-    /**
-     * @return $this
-     */
-    public function submit()
+    public function submit() : FormBuilder
     {
         $this->form->addItem(new Input('submit', Input::TYPE_SUBMIT));
 
         return $this;
     }
 
-    /**
-     * @return Form
-     */
-    public function build()
+    public function build() : Form
     {
         return $this->form;
     }
