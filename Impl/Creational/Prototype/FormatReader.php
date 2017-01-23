@@ -1,11 +1,7 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Prototype;
 
-/**
- * Class FormatReader
- * @package Impl\Prototype
- */
 abstract class FormatReader
 {
     /**
@@ -17,20 +13,15 @@ abstract class FormatReader
      * @var string
      */
     protected $results;
-    /**
-     * @param mixed $source
-     */
+
     public function __construct($source)
     {
         $this->source = $source;
     }
 
-    abstract public function read();
+    abstract public function read() : void;
 
-    /**
-     * @return string
-     */
-    public function getResults()
+    public function getResults() : string
     {
         return $this->results;
     }

@@ -1,15 +1,11 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Prototype;
 
-/**
- * Class JSONFormatReader
- * @package Impl\Prototype
- */
 class JSONFormatReader extends FormatReader
 {
 
-    public function read()
+    public function read() : void
     {
         $colors = json_decode($this->source);
 

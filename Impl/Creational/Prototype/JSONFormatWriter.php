@@ -1,17 +1,10 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Prototype;
 
-/**
- * Class JSONFormatWriter
- * @package Impl\Prototype
- */
 class JSONFormatWriter extends FormatWriter
 {
-    /**
-     * @param string $data
-     */
-    public function write($data)
+    public function write(string $data) : void
     {
         $colors = explode(' ', $data);
 

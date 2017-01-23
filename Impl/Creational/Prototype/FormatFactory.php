@@ -1,11 +1,7 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Prototype;
 
-/**
- * Class FormatFactory
- * @package Impl\Prototype
- */
 class FormatFactory
 {
     /**
@@ -18,29 +14,18 @@ class FormatFactory
      */
     protected $formatWriter;
 
-    /**
-     * FormatFactory constructor.
-     * @param FormatReader $formatReader
-     * @param FormatWriter $formatWriter
-     */
     public function __construct(FormatReader $formatReader, FormatWriter $formatWriter)
     {
         $this->formatReader = $formatReader;
         $this->formatWriter = $formatWriter;
     }
 
-    /**
-     * @return FormatReader
-     */
-    public function getFormatReader()
+    public function getFormatReader() : FormatReader
     {
         return clone $this->formatReader;
     }
 
-    /**
-     * @return FormatWriter
-     */
-    public function getFormatWriter()
+    public function getFormatWriter() : FormatWriter
     {
         return clone $this->formatWriter;
     }

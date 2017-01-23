@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\LazyInitialization;
 
@@ -14,19 +14,12 @@ class ServiceProvider
      */
     protected $services = [];
 
-    /**
-     * sets up class map
-     */
     public function __construct()
     {
         $this->classMap = include 'config.php';
     }
 
-    /**
-     * @param string $name
-     * @return Service
-     */
-    public function get($name)
+    public function get(string $name) : Service
     {
         if (!$this->has($name)) {
             $class = $this->getClass($name);
@@ -36,21 +29,12 @@ class ServiceProvider
         return $this->services[$name];
     }
 
-    /**
-     * @param string $name
-     * @return bool
-     */
-    public function has($name)
+    public function has(string $name) : bool
     {
         return isset($this->services[$name]);
     }
 
-    /**
-     * @param string $name
-     * @return mixed
-     * @throws \Exception
-     */
-    protected function getClass($name)
+    protected function getClass(string $name)
     {
         if (!array_key_exists($name, $this->classMap)) {
             throw new \Exception("Service '$name' is not configured!");

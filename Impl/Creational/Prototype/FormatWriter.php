@@ -1,11 +1,7 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Impl\Creational\Prototype;
 
-/**
- * Class FormatWriter
- * @package Impl\Prototype
- */
 abstract class FormatWriter
 {
     /**
@@ -13,14 +9,8 @@ abstract class FormatWriter
      */
     protected $results;
 
-    /**
-     * @param string $data
-     */
-    abstract public function write($data);
+    abstract public function write(string $data) : void;
 
-    /**
-     * @return mixed
-     */
     public function getResults()
     {
         return $this->results;
