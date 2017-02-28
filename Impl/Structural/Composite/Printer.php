@@ -4,28 +4,32 @@ namespace Impl\Structural\Composite;
 
 class Printer
 {
+    const TAB = "&nbsp&nbsp&nbsp&nbsp";
+
     public function print(ToDo $item) : void
     {
-        foreach ($item->getItems() as $loopItem) {
-            $this->printWithStars($loopItem);
-        }
+        $this->printWithSpace($item);
     }
 
-    private function printWithStars(ToDo $item, string $stars = '') : void
+    private function printWithSpace(ToDo $item, string $space = "", int $level = 0) : void
     {
         if ($item->getComposite()) {
-            $this->printRow($item, $stars);
+            if ($level > 0) {
+                $this->printRow($item, $space);
+                $space .= static::TAB;
+            }
+            /** @var ListItem $item */
             foreach ($item->getItems() as $loopItem) {
-                $this->printWithStars($loopItem, $stars . "*");
+                $this->printWithSpace($loopItem, $space, $level + 1);
             }
         } else {
-            $this->printRow($item, $stars);
+            $this->printRow($item, $space);
         }
     }
 
-    private function printRow(ToDo $item, string $stars) : void
+    private function printRow(ToDo $item, string $space) : void
     {
-        $row = $stars . $item->getDescription();
+        $row = $space . $item->getDescription();
 
         if ($item->getDueDate()) {
             $row .= " due to " . $item->getDueDate()->format('Y-m-d');
